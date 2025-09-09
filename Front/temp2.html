@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="2n">
+    <head>
+        <meta charset="UTF-8">
+        <title>Professional Summar&Projects</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            body{
+                font-family: Arial,sans-serif;
+                background-color: aquamarine;
+                margin:0;
+                padding:0;
+            }
+            .container{
+                max-width: 900px;
+                margin: 40px;
+                background-color: bisque;
+                padding: 32px;
+                border-radius: 8px;
+                box-shadow:0 2px 8px rgba(red, green, blue, alpha) ;
+            }
+            .summary{
+                margin-bottom: 32px;
+                padding-bottom: 16px;
+                border-bottom: 1px solid;
+            }
+            .summaryh2{
+                margin-top: 0;
+                color:blue;
+            }
+            .cards{
+                display:flex;
+                flex-wrap: wrap;
+                gap: 24px;
+                background-color: blueviolet;
+            }
+            .card{
+                background:#b67d27;
+                border-radius: 8px;
+                box-shadow: 0 1px 4px rgba(red, green, blue, alpha);
+                padding: 22px;
+                flex:1 1 140px;
+                min-width: 140px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content:space-between;
+            }
+            .cardh3{
+                margin-top: 0;
+                color: #b67d27;
+            }
+            .cardp{
+                margin-bottom: 0;
+                color: darkgreen;
+            }
+            @media(max-width:600px){
+                .cards{
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="'summary">
+                <h2>Professional summary</h2>
+                <p>
+                    experiment Full Stack Developer with a strong background in designing
+                </p>
+            </div>
+        </div>
+        <h2>projects</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>project management dashboard</h3>
+                <p>developed a response dashboard for tracking project progress</p>
+            </div>
+            <div class="card">
+                <h3>portfolio website</h3>
+                <p>built a scalable e-commerce site</p>
+            </div>
+            <div class="card">
+                <h3>portfile website</h3>
+                <p>designed and deployed a personal portfile website showing skills</p>
+            </div>
+        </div>
+    </body>
+</html>

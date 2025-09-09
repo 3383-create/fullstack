@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manikya Reddy's portfolio showcasing full stack development projects, skills, and experience.">
+    <meta name="keywords" content="Full Stack Developer, Web Development, Portfolio, React, Node.js, MongoDB">
+    <title>Manikya Reddy's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4c91af;
+            --accent: #ffe522;
+            --bg: #f2f2f2;
+            --card-bg: #fff;
+            --text: #333;
+            --shadow: 0 4px 24px rgba(0,0,0,0.1);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 3px;
+        }
+        header p {
+            margin: 1rem 0 0 0;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        nav {
+            margin-top: 1.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .about {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .about-text {
+            flex: 2 1 350px;
+            text-align: center;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .skill-card {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            padding: 1.5rem 2.5rem;
+            min-width: 140px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: var(--accent);
+            color: #fff;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .project-card {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(76,175,80,0.2);
+        }
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #ddd;
+        }
+        .project-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin: 0 0 0.5rem 0;
+        }
+        .project-desc {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        .project-link {
+            align-self: flex-end;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        .project-link:hover {
+            color: var(--primary);
+        }
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .skills {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Manikya Reddy</h1>
+        <p>Full Stack Developer | Problem Solver</p>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img class="project-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Personal Portfolio">
+                    <div class="project-content">
+                        <div>
+                            <div class="project-title">Personal Portfolio</div>
+                            <div class="project-desc">A React-powered portfolio site with smooth animations, responsive design, and interactive UI components.</div>
+                        </div>
+                        <a class="project-link" href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Task Manager">
+                    <div class="project-content">
+                        <div>
+                            <div class="project-title">Ethical Hacker</div>
+                            <div class="project-desc">Ethical Hacking.</div>
+                        </div>
+                        <a class="project-link" href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Weather Dashboard">
+                    <div class="project-content">
+                        <div>
+                            <div class="project-title">Dashboard</div>
+                            <div class="project-desc">A weather app using JavaScript and API integration, displaying live data and weather forecasts.</div>
+                        </div>
+                        <a class="project-link" href="#">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    Hi! I'm Manikya Reddy, a passionate Full Stack Developer who loves solving complex problems through code. I specialize in building web applications using the latest technologies. I'm always eager to learn, innovate, and build things that make a difference. 
+                </p>
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div class="skill-card">HTML</div>
+                    <div class="skill-card">CSS</div>
+                    <div class="skill-card">JavaScript</div>
+                    <div class="skill-card">Linux</div>
+                    <div class="skill-card">Node.js</div>
+                    <div class="skill-card">MongoDB</div>
+                    <div class="skill-card">Git & GitHub</div>
+                    <div class="skill-card">Python</div>
+                </div>
+            </div>
+        </section>
+            &copy; 2025 Manikya Reddy
