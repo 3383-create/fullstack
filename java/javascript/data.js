@@ -8,3 +8,4 @@ fetch("https://jsonplaceholder.typicode.com/users")
     output += "</ul>";
     document.body.innerHTML+=output
 });
+ 
