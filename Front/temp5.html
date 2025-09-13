@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Task List - Tight Complete Button</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#addTask").click(() => {
+      const task = $("#inputField").val().trim();
+      if (task) {
+        const $li = $(`
+          <li>
+            <span class="task-text">${task}</span>
+            <button class="complete-btn">Complete</button>
+          </li>
+        `);
+        $("#taskList").append($li);
+        $("#inputField").val('');
+      } else {
+        alert("Please enter a task!");
+      }
+    });
+
+    $("#deleteLast").click(() => {
+      $("#taskList li:last").remove();
+    });
+
+    $("#taskList").on("click", ".complete-btn", function() {
+      $(this).parent("li").toggleClass("completed");
+    });
+  });
+</script>
+
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; background: #eef7f9; }
+  input { padding: 6px; width: 220px; margin-bottom: 10px; }
+  button {
+    margin-left: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  ul { padding-left: 20px; }
+  li {
+    margin-bottom: 8px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background: white;
+    display: inline-flex;          /* Changed from flex */
+    align-items: center;
+  }
+  .task-text {
+    margin-right: 6px;             /* Small gap between text and button */
+  }
+  li.completed {
+    background-color: #c8e6c9;
+    color: gray;
+    text-decoration: line-through;
+    font-style: italic;
+  }
+</style>
+
+</head>
+<body>
+
+<h2>Tasks</h2>
+
+<input id="inputField" type="text" placeholder="Enter new task" />
+<button id="addTask">Add Task</button>
+<button id="deleteLast">Delete Last Task</button>
+
+<ul id="taskList">
+  <li>
+    <span class="task-text">Task 1</span>
+    <button class="complete-btn">Complete</button>
+  </li>
+  <li>
+    <span class="task-text">Task 2</span>
+    <button class="complete-btn">Complete</button>
+  </li>
+  <li>
+    <span class="task-text">Task 3</span>
+    <button class="complete-btn">Complete</button>
+  </li>
+</ul>
+
+</body>
+</html>

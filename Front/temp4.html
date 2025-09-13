@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>jQuery </title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#mainBtn").click(() => {
+      $("h1").text("Clicked!");
+      $(".box").css("background", "pink");
+    });
+    $("#mainBtn").dblclick(() => {
+      $("h1").text("Double clicked!");
+      $(".box").css("background", "lightblue");
+    });
+    $("#mainBtn").hover(() => {
+      $("h1").text("Hovered!");
+      $(".box").css("background", "red");
+    });
+
+    // Existing Add Item button adds fixed text
+    $("#addItem").click(() => {
+      $("#itemList").append("<li>New Item</li>");
+    });
+
+    // New Add Task button adds input text
+    $("#addTask").click(() => {
+      const task = $("#inputField").val().trim();
+      if (task) {
+        $("#itemList").append(`<li>${task}</li>`);
+        $("#inputField").val('');
+      } else {
+        alert("Please enter a task!");
+      }
+    });
+
+    $("#removeLast").click(() => $("#itemList li:last").remove());
+
+    $("#inputField").on("input", () => {
+      $("#textOutput").text($("#inputField").val());
+    });
+  });
+</script>
+
+<style>
+  body { font-family: Arial; padding: 20px; background: rgb(158, 235, 241); }
+  h1 { color: #333; }
+  .box { background: rgb(237, 218, 193); padding: 10px; margin: 10px 0; }
+  button { margin-right: 10px; padding: 6px 12px; cursor: pointer; }
+  input { padding: 6px; width: 200px; margin-bottom: 10px; }
+  ul { padding-left: 20px; }
+</style>
+
+</head>
+<body>
+
+<h1>jQuery </h1>
+
+<button id="mainBtn">Click me</button>
+
+<div class="box"><p>jQuery box</p></div>
+
+<input id="inputField" type="text" placeholder="Type here..." />
+<p id="textOutput">Initial text</p>
+
+<ul id="itemList"><li>Item 1</li></ul>
+
+<button id="addItem">Add Item</button>
+<button id="addTask">Add Task</button>
+<button id="removeLast">Remove Last</button>
+
+</body>
+</html>
