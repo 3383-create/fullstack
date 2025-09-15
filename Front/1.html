@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Editable To-Do List with CSS on Click</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        li.selected {
+            background-color: #f0f8ff;
+            font-weight: bold;
+            color: #333;
+        }
+        input.edit-input {
+            padding: 6px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>My To-Do List</h2>
+    <ul id="todo-list">
+        <li>Buy groceries</li>
+        <li>Call mom</li>
+        <li>Finish homework</li>
+    </ul>
+
+    <script>
+        $(document).ready(function() {
+            // Apply CSS on click
+            $('#todo-list').on('click', 'li', function() {
+                $('#todo-list li').removeClass('selected'); // Remove from others
+                $(this).addClass('selected'); // Add to clicked item
+            });
+
+            // Enable editing on double-click
+            $('#todo-list').on('dblclick', 'li', function() {
+                var $li = $(this);
+                var currentText = $li.text();
+                var $input = $('<input type="text" class="edit-input">').val(currentText);
+
+                $li.html($input);
+                $input.focus();
+
+                // Save on Enter key press
+                $input.on('keydown', function(e) {
+                    if (e.key === "Enter") {
+                        var newText = $(this).val();
+                        $li.text(newText);
+                        $li.removeClass('selected'); // Optionally remove style after editing
+                    }
+                });
+
+                // Save on clicking outside (blur)
+                $input.on('blur', function() {
+                    var newText = $(this).val();
+                    $li.text(newText);
+                    $li.removeClass('selected'); // Optionally remove style after editing
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
