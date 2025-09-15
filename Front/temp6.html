@@ -75,7 +75,7 @@
     }
 
     ul#taskList li.completed {
-      background-color: #fff8b3; /* soft yellow */
+      background-color: #fff8b3;
       text-decoration: line-through;
       color: #777;
     }
@@ -136,12 +136,12 @@
         }
       });
 
-      // Mark as complete toggles
+     
       $("#taskList").on("click", ".done", function(){
         $(this).parent().toggleClass("completed");
       });
 
-      // Delete task
+      
       $("#taskList").on("click", ".delete", function(){
         $(this).parent().remove();
       });
